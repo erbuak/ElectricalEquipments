@@ -1,0 +1,38 @@
+﻿@model List<Unit>
+@{
+    ViewData["Title"] = "Üniteler";
+}
+
+<div class="d-flex align-items-center">
+    <h1 class="mr-auto">Üniteler</h1>
+    <a asp-controller="Units" asp-action="Add" class="btn btn-primary">
+        <i class="fas fa-plus"></i>
+    </a>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Kod Adı</td>
+            <td>Adı</td>
+            <td>İşlemler</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var unit in Model)
+        {
+            <tr>
+                <td>@unit.CodeName</td>
+                <td>@unit.Name</td>
+                <td>
+                    <a asp-controller="Units" asp-action="Delete" asp-route-id="@unit.Id" class="btn-sm btn-danger">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                    <a asp-controller="Units" asp-action="Edit" asp-route-id="@unit.Id" class="btn-sm btn-info ml-2">
+                        <i class="fas fa-pen"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

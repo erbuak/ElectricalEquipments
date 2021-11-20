@@ -1,0 +1,18 @@
+﻿@model Unit
+@{
+    ViewData["Title"] = "Ünite Silme Onayı";
+}
+
+<h1>Silme Onayı</h1>
+
+
+<form asp-controller="Units" asp-action="DeleteConfirmed">
+    <input asp-for="Id" type="hidden" />
+    <p>
+        Kod adı @Model.CodeName olan @Model.Name isimli ünite silinecektir.
+    </p>
+    <button class="btn btn-danger">Silmeyi Onayla</button>
+</form>
+<div class="mt-3">
+    <a asp-controller="Units" asp-action="Index">Silme İşlemini iptal et!</a>
+</div>
