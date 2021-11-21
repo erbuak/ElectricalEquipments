@@ -13,6 +13,8 @@ namespace ElectricalEquipments.Models
             Database.Migrate();
         }
 
+        public DbSet<User> Users { get; set; }
+
         public DbSet<Unit> Units { get; set; }
 
         public DbSet<Motor> Motors { get; set; }
